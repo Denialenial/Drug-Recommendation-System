@@ -9,14 +9,10 @@ from sklearn.metrics import (
     accuracy_score
 )
 
-# =====================================================
 # SETUP
-# =====================================================
 os.makedirs("Model", exist_ok=True)
 
-# =====================================================
 # LOAD DATA
-# =====================================================
 X_train = load_npz("../Task2/Output/X_train.npz")
 X_test = load_npz("../Task2/Output/X_test.npz")
 
@@ -30,9 +26,7 @@ print("=====================================================")
 print("Training feature shape:", X_train.shape)
 print("Testing feature shape :", X_test.shape)
 
-# =====================================================
 # LOAD BEST MODEL
-# =====================================================
 model = joblib.load("../Task3/Model/best_model.pkl")
 
 print("\n=====================================================")
@@ -41,25 +35,19 @@ print("=====================================================")
 
 print(model)
 
-# =====================================================
 # TRAIN MODEL
-# =====================================================
 model.fit(X_train, y_train)
 
 print("\nModel training completed successfully.")
 
-# =====================================================
 # PREDICTIONS
-# =====================================================
 pred = model.predict(X_test)
 
 print("\n=====================================================")
 print("MODEL PREDICTIONS COMPLETED")
 print("=====================================================")
 
-# =====================================================
 # ACCURACY SCORE
-# =====================================================
 accuracy = accuracy_score(y_test, pred)
 
 print("\nAccuracy Score:")

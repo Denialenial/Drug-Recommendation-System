@@ -4,18 +4,14 @@ import pandas as pd
 import joblib
 import re
 
-# =====================================================
 # PAGE CONFIG
-# =====================================================
 st.set_page_config(
     page_title="Drug Recommendation System",
     page_icon="🩺",
     layout="centered"
 )
 
-# =====================================================
 # MODERN UI
-# =====================================================
 st.markdown("""
 <style>
 
